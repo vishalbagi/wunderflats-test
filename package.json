@@ -1,6 +1,6 @@
 {
-  "name": "wunderflats-test",
-  "version": "1.0.1",
+  "name": "Wunderflat-test",
+  "version": "0.0.5",
   "description": "Selenium Tests",
   "main": "test.js",
   "directories": {
@@ -13,21 +13,23 @@
     "chai": "^4.1.2",
     "chromedriver": "^2.38.3",
     "mocha": "^5.1.0",
+    "mocha-allure-reporter": "^1.4.0",
     "node-fetch": "^2.1.2",
     "selenium-standalone": "^6.14.1",
-    "sinon": "^4.5.0",
     "wdio-chromedriver-service": "^0.1.3",
     "wdio-firefox-profile-service": "0.1.1",
     "wdio-mocha-framework": "^0.5.13",
     "wdio-phantomjs-service": "^0.2.2",
     "wdio-selenium-standalone-service": "0.0.10",
-    "wdio-spec-reporter": "^0.1.4",
-    "webdriverio": "^4.12.0"
+    "wdio-allure-reporter": "^0.5.1",
+    "wdio-spec-reporter": "^0.1.4"
   },
   "scripts": {
     "postinstall": "npm install -g selenium-standalone",
     "kill-selenium": "kill -15 $( lsof -i:4444 -t )",
-    "test": "./node_modules/.bin/wdio wdio.conf.js",
-    "help": "./node_modules/.bin/wdio --help"
+    "test": "./node_modules/.bin/wdio wdio.conf.js"
+  },
+  "devDependencies": {
+    "webdriverio": "^4.14.1"
   }
 }

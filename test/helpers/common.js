@@ -1,5 +1,6 @@
 // Put common functions here to be used in all tests
- var randomString =function (len, charSet) {
+class common{
+ randomString (len, charSet) {
     charSet = charSet || 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
     var randomString = '';
     for (var i = 0; i < len; i++) {
@@ -8,4 +9,5 @@
     }
     return randomString;
 }
-exports.randomString=randomString;
+}
+export  default new common()

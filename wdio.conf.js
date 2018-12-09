@@ -57,6 +57,7 @@ exports.config = {
   //
   // Level of logging verbosity: silent | verbose | command | data | result | error
   logLevel: 'verbose',
+    logDir:'./logs',
   //
   // Enables colors for log output.
   coloredLogs: true,
@@ -66,10 +67,10 @@ exports.config = {
   //
   // Set a base URL in order to shorten url command calls. If your url parameter starts
   // with "/", then the base url gets prepended.
-  baseUrl: 'http://localhost',
+  baseUrl: 'https://en-master.wunderflats.xyz',
   //
   // Default timeout for all waitFor* commands.
-  waitforTimeout: 90000,
+  waitforTimeout: 900000,
   //
   // Default timeout in milliseconds for request
   // if Selenium Grid doesn't send response
@@ -112,13 +113,15 @@ exports.config = {
   // Test reporter for stdout.
   // The only one supported by default is 'dot'
   // see also: http://webdriver.io/guide/testrunner/reporters.html
-  reporters: ['spec'],
-  //
+ // reporters: ['spec'],
+
+    reporters: ['spec'],
+     //
   // Options to be passed to Mocha.
   // See the full list at http://mochajs.org/
   mochaOpts: {
-    ui: 'bdd',timedOut:25000,
-    compilers: ['js:babel-register'],
+      timeout: 60000,
+      ui: 'bdd',    compilers: ['js:babel-register'],
     require: ['./test/helpers/common.js']
   },
   //
@@ -137,8 +140,7 @@ exports.config = {
   // Gets executed before test execution begins. At this point you can access all global
   // variables, such as `browser`. It is the perfect place to define custom commands.
   before: function (capabilities, specs) {
-      var sinon = require('sinon')
-    // http://sinonjs.org/
+
     var chai = require('chai')
     // http://chaijs.com/
     global.fetch = require('node-fetch')
