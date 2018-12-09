@@ -1,0 +1,8 @@
+Solution to limitaton:
+- The “My Account” section can only be accessed when logged in
+In before section of test suite I wrote function to log on the website
+- You are not provided with database access so you can only run assertions against what is
+“in the browser”.
+To verify that test case is sucessfull i am first saving current value of user than changing it to new value . And as a part of verification i am checking that new value updated in website is equal to value which we entered and also not equal to old value.
+- The database is reset every night, so user accounts are persisted only for a certain time.
+To handle this limitaton In before suite section I am checking that I was able to login using test data from config file . If user is not present as data base has be reset ,then I able registering new user and the verifying Profile test case
