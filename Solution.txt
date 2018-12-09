@@ -1,6 +1,8 @@
 I am  are using Webdriverio's TestRunner, Selenium to run all of our tests in mocha. For test assetion I am using Chai
 I have followed Page object model for enhancing test maintenance and reducing code duplication. Test code and page specific code are separate which allows any modifications required due to UI changes to all be made in one place.  
 
+If test case is failing then it will capture screenshot of webpage and will save it in project directory.
+
 Solution to limitaton:
 - The “My Account” section can only be accessed when logged in
 Solutin: In before section of test suite I wrote function to log on the website
