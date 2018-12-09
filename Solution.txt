@@ -1,8 +1,36 @@
+I am  are using Webdriverio's TestRunner, Selenium to run all of our tests in mocha. 
+I have followed Page object model for enhancing test maintenance and reducing code duplication. Test code and page specific code are separate which allows any modifications required due to UI changes to all be made in one place.  
+
 Solution to limitaton:
 - The “My Account” section can only be accessed when logged in
-In before section of test suite I wrote function to log on the website
+Solutin: In before section of test suite I wrote function to log on the website
 - You are not provided with database access so you can only run assertions against what is
 “in the browser”.
-To verify that test case is sucessfull i am first saving current value of user than changing it to new value . And as a part of verification i am checking that new value updated in website is equal to value which we entered and also not equal to old value.
+Solutin: To verify that test case is sucessfull i am first fetching current value of user than changing it to new value . And as a part of verification i am checking that new value updated in website is equal to value which we entered and also not equal to old value.
 - The database is reset every night, so user accounts are persisted only for a certain time.
-To handle this limitaton In before suite section I am checking that I was able to login using test data from config file . If user is not present as data base has be reset ,then I able registering new user and the verifying Profile test case
+Solutin:To handle this limitaton In before suite section I am checking that I was able to login using test data from config file . If user is not present as data base has be reset ,then I able registering new user and then the verifying Profile test case
+
+Project Structure :
+    test
+    ├───helpers
+    │       common.js           : All Common utility function world go here
+    │
+    ├───page_object
+    │       Home.js             : Page object file for Home Page
+    │       Login.js            : Page object file for Login Page
+    │       page.js             : Page Base file
+    │       Profile.js          : Page object file for Profile Page
+    │       Signup.js           : Page object file for Signup Page
+    │
+    ├───specs
+    │       profile.js          : Test case for profile page
+    │
+    └───util
+            config.js           : Config details for test goes here
+            
+            
+Test Covered:
+
+Any configuration related data goes in config.js . In before suite, I am login in to wunderflats site using data provided in config file , If login is not successful , I am going to Signup page then I am creating a new user using random data . Once new user is registered I am go to Profile page. On Profile page I have created 3 Test case
+            
+           
