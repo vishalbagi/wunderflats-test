@@ -1,5 +1,3 @@
-#Selenium WebdriverIO Boilerplate with Mocha + Chai  
-Selenium + Node + webdriverio + phantomjs + mocha + chai 
 
 
 ##Installation
