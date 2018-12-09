@@ -13,6 +13,7 @@ Solutin: To verify that test case is sucessfull i am first fetching current valu
 Solutin:To handle this limitaton In before suite section I am checking that I was able to login using test data from config file . If user is not present as data base has be reset ,then I able registering new user and then the verifying Profile test case
 
 Project Structure :
+    ├───wdio.conf.js           : All webdriver related config goes over here.
     test
     ├───helpers
     │       common.js           : All Common utility function world go here
