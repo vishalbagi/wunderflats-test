@@ -1,4 +1,4 @@
-I am  are using Webdriverio's TestRunner, Selenium to run all of our tests in mocha. 
+I am  are using Webdriverio's TestRunner, Selenium to run all of our tests in mocha. For test assetion I am using Chai
 I have followed Page object model for enhancing test maintenance and reducing code duplication. Test code and page specific code are separate which allows any modifications required due to UI changes to all be made in one place.  
 
 Solution to limitaton:
@@ -32,5 +32,9 @@ Project Structure :
 Test Covered:
 
 Any configuration related data goes in config.js . In before suite, I am login in to wunderflats site using data provided in config file , If login is not successful , I am going to Signup page then I am creating a new user using random data . Once new user is registered I am go to Profile page. On Profile page I have created 3 Test case
-            
+1. Wunderflat customer should able to change his First Name
+2. Wunderflat customer should able to change his Last Name
+3. Wunderflat customer should able to change his company  Name 
+
+In all three test case I am first fetching curent field details and then updating it to new data . Once details are saved I am verifying that the data displayed in My profile is new data . Assertion are added usingg Chai . 
            
